@@ -10,7 +10,10 @@ export default function createAccount() {
   const handleCreate = async (e: any) => {
     e.preventDefault();
     var Token = await signInAndGetToken();
-    await handleLoginSuccess(Token);
+      if (Token != null)
+     {
+      await handleLoginSuccess(Token);
+     }
 
   };
 
