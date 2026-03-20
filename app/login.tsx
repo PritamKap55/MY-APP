@@ -53,7 +53,10 @@ export default function Login() {
         try
         {
             var Token = await  signInAndGetToken();
+            if (Token != null)
+     {
             setToken(Token);
+     }
             //var SheetId = await createSheet(Token);
             //setSheetId(SheetId)
             //addData(Token,SheetId);

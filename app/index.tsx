@@ -6,7 +6,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 export default function HomeScreen() {
   const router = useRouter();
   const handleLogin = () => {
-    router.push('/login'); // make sure login.tsx exists
+    router.push('/accounts'); // make sure login.tsx exists
   };
   return (
     <ThemeProvider>

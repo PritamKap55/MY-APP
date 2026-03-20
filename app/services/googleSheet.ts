@@ -72,10 +72,10 @@ export const searchAccount = async (accessToken: string) => {
     );
 
     const files = searchResponse.data.files || [];
-
+    Alert.alert("Success", "files Received");
     return files;
   } catch (error: any) {
-    console.error("Error fetching sheets:", error.response?.data || error);
+    console.error(error);
     return [];
   }
 };

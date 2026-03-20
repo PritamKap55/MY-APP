@@ -21,9 +21,12 @@ export default function SheetListScreen({  }: any) {
 
   const loadSheets = async () => {
      var Token = await signInAndGetToken();
-        
-    const result = await searchAccount(Token);
-    setFiles(result);
+     if (Token != null)
+     {
+        const result = await searchAccount(Token);
+        setFiles(result);
+     }
+    
   };
 
   const shareSheet = async (sheetId: string) => {
@@ -90,6 +93,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     marginBottom: 20,
+    marginTop:20,
   },
   item: {
     padding: 15,

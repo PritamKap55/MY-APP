@@ -7,13 +7,15 @@ import { ThemeProvider } from "./context/ThemeContext";
 export default function createAccount() {
   const [projectName, setProjectName] = useState("");
 
-  const handleCreate = async (e: any) => {
-    e.preventDefault();
-    var Token = await signInAndGetToken();
-    await handleLoginSuccess(Token);
+ const handleCreate = async (e: any) => {
+  e.preventDefault();
 
-  };
+  const token = await signInAndGetToken();
 
+  if (token) {
+    await handleLoginSuccess(token); // ✅ safe (token is string here)
+  }
+};
   const handleLoginSuccess = async (accessToken: string) => {
     try {
       const sheetId = await createSheetIfNotExists(
