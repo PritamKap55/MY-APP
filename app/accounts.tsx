@@ -1,10 +1,8 @@
-import axios from "axios";
 import { router } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { ThemeProvider } from "./context/ThemeContext";
 import { signInAndGetToken } from "./services/getToken";
-import { searchAccount } from "./services/googleSheet";
 
 type FileType = {
   id: string;
@@ -21,30 +19,30 @@ export default function SheetListScreen({  }: any) {
 
   const loadSheets = async () => {
      var Token = await signInAndGetToken();
-     if (Token != null)
-     {
-        const result = await searchAccount(Token);
-        setFiles(result);
-     }
+    //  if (Token != null)
+    //  {
+    //     const result = await searchAccount(Token);
+    //     setFiles(result);
+    //  }
     
   };
 
-  const shareSheet = async (sheetId: string) => {
-     var Token = await signInAndGetToken();
+  // const shareSheet = async (sheetId: string) => {
+  //    var Token = await signInAndGetToken();
 
-        await axios.post(
-      `https://www.googleapis.com/drive/v3/files/${sheetId}/permissions`,
-      {
-        role: "reader",
-        type: "anyone"
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${Token}`,
-        },
-      }
-    );
-  };
+  //       await axios.post(
+  //     `https://www.googleapis.com/drive/v3/files/${sheetId}/permissions`,
+  //     {
+  //       role: "reader",
+  //       type: "anyone"
+  //     },
+  //     {
+  //       headers: {
+  //         Authorization: `Bearer ${Token}`,
+  //       },
+  //     }
+  //   );
+  // };
 
  const renderItem = ({ item }: { item: FileType }) => (
     <View>
@@ -65,7 +63,7 @@ export default function SheetListScreen({  }: any) {
       {/* Share Button */}
       <Pressable
         style={styles.shareBtn}
-        onPress={() => shareSheet(item.id)}
+        // onPress={() => shareSheet(item.id)}
       >
         <Text style={styles.shareText}>Share</Text>
       </Pressable>
