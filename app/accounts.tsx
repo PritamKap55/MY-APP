@@ -11,6 +11,7 @@ type FileType = {
 
 export default function SheetListScreen({  }: any) {
   const [files, setFiles] = useState<FileType[]>([]);
+  const [error, setRrror] = useState<string>("ok");
 
   useEffect(() => {
 
@@ -19,6 +20,7 @@ export default function SheetListScreen({  }: any) {
 
   const loadSheets = async () => {
      var Token = await signInAndGetToken();
+     setRrror(Token.toString());
     //  if (Token != null)
     //  {
     //     const result = await searchAccount(Token);
@@ -75,6 +77,7 @@ export default function SheetListScreen({  }: any) {
     <ThemeProvider>
       
         <Text style={styles.title}>My Google Sheets</Text>
+        <Text style={styles.title}>{error}</Text>
 
         <FlatList
           data={files}

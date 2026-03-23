@@ -1,5 +1,5 @@
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { Alert } from 'react-native';
+
 
 GoogleSignin.configure({
   scopes: [
@@ -20,19 +20,11 @@ export const signInAndGetToken = async () => {
     const tokens = await GoogleSignin.getTokens();
     const accessToken = tokens?.accessToken;
 
-    if (!accessToken) {
-      Alert.alert("Error", "No access token received");
-      return null;
-    }
-
-    Alert.alert("Success", "Access Token Received");
-
     return accessToken;
 
   } catch (error: any) {
-   
-    Alert.alert("Login Error", error);
 
-    return null;
+
+    return "Error";
   }
 };
