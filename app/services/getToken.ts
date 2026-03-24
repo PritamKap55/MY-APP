@@ -25,6 +25,6 @@ export const signInAndGetToken = async () => {
   } catch (error: any) {
 
 
-    return "Error";
+    return error;
   }
 };
