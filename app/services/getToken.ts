@@ -6,7 +6,7 @@ GoogleSignin.configure({
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive.file'
   ],
-  webClientId: '470784951477-1mcdh3c1puclmb9ttot8mchl3onvsshb.apps.googleusercontent.com',
+  webClientId: '470784951477-eph9euapeqjpsrelohp5p6eq2jvbluo0.apps.googleusercontent.com',
   offlineAccess: true,
 });
 
