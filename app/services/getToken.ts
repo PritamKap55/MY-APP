@@ -7,7 +7,7 @@ GoogleSignin.configure({
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive.file'
   ],
-  webClientId: '470784951477-eph9euapeqjpsrelohp5p6eq2jvbluo0.apps.googleusercontent.com',
+  webClientId: '470784951477-lcma97i0v0s5uckjmf6edl6lo96kb8b0.apps.googleusercontent.com',
   offlineAccess: true,
   forceCodeForRefreshToken: true,
 });
