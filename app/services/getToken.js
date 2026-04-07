@@ -1,4 +1,3 @@
-
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 
@@ -7,9 +6,9 @@ GoogleSignin.configure({
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive.file'
   ],
-  webClientId: '470784951477-lcma97i0v0s5uckjmf6edl6lo96kb8b0.apps.googleusercontent.com',
+  webClientId: "417059671592-8hpg94oqiohctu16phppadvgpcl7b2rj.apps.googleusercontent.com",
+	androidClientId: "417059671592-eti1v5u7o33n01m49b1o606cjm28m31s.apps.googleusercontent.com",
   offlineAccess: true,
-  forceCodeForRefreshToken: true,
 });
 
 
@@ -24,7 +23,7 @@ export const signInAndGetToken = async () => {
 
     return accessToken;
 
-  } catch (error: any) {
+  } catch (error) {
 
 
     return error;
